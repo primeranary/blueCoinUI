@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Blockchain
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+  
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+   <ion-refresher-content
+      pullingText="Pull to refresh"
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles"
+      refreshingText="...fetching...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item *ngFor="let transaction of transactions">
+      <ion-card>
+          <ion-card-content>
+              Date: <h4>{{transaction.timestamp}}</h4>
+              Sender: <h4>{{transaction.fromId}}</h4>
+              Receiver: <h4>{{transaction.toId}}</h4>
+              Amount: <h4>{{transaction.amount}}</h4>
+              TransactionId<h4>{{transaction.transactionId}}</h4>
+  </ion-card-content>
+</ion-card>
+  </ion-item>
+  </ion-list>
+</ion-content>

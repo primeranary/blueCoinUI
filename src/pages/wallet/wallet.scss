@@ -1,0 +1,7 @@
+page-wallet {
+    .list .item, .list .item-complex .item-content .refresher .refresher-content {
+        background: rgba(255,255,255,0);
+      }
+
+      ion-content { background-color: transparent !important; }
+}

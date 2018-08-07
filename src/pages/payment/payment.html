@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>BlueCoin</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div padding>
+  </div>
+  <ion-item>
+
+    <ion-label color="primary" stacked>Please select your ID</ion-label>
+    <!-- <ion-input type="string" [(ngModel)]="trans.fromId"></ion-input> // Can type ID manually-->
+
+    <ion-select [(ngModel)]="trans.fromId" interface="popover">
+      <ion-option *ngFor="let wallet of wallets" value="{{wallet.publicId}}">{{wallet.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Who would you like to receive BlueCoin?</ion-label>
+    <!-- <ion-input type="string"[(ngModel)]="trans.fromId"></ion-input> Can type ID mamaully-->
+    <ion-select [(ngModel)]="trans.toId" interface="popover">
+      <ion-option *ngFor="let wallet of wallets" value="{{wallet.publicId}}">{{wallet.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Amount</ion-label>
+    <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="trans.amount" interface="popover"></ion-input>
+  </ion-item>
+  <button ion-button (click)="transferMoney()" (click)="ionViewDidLoad()">Send BlueCoin</button>
+</ion-content>
